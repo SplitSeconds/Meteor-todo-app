@@ -1,19 +1,17 @@
 /* CSS declarations go here */
 body {
-  font-family: sans-serif;
-  background-color: #315481;
-  background-image: linear-gradient(to bottom, #315481, #918e82 100%);
+  font-family: 'Roboto';
+  background-image: url("https://res.cloudinary.com/dpjdxqrce/image/upload/v1555846398/alessandro-bellone-1322388-unsplash.jpg");
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.3);
   background-attachment: fixed;
- 
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
- 
   padding: 0;
   margin: 0;
- 
   font-size: 14px;
 }
  
@@ -21,26 +19,44 @@ body {
   max-width: 600px;
   margin: 0 auto;
   min-height: 100%;
-  background: white;
+  background: rgba(0, 0, 0, 0.3);
 }
  
 header {
-  background: #d2edf4;
-  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
-  padding: 20px 15px 15px 15px;
+  /* background: rgba(0, 0, 0, 0.3); */
+  /* background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%); */
+  padding: 20px 15px 0px 15px;
   position: relative;
 }
  
 #login-buttons {
   display: block;
+  float: right;
+  
+}
+
+.login-button {
+  margin-bottom: 25px;
 }
  
 h1 {
   font-size: 1.5em;
   margin: 0;
-  margin-bottom: 10px;
   display: inline-block;
   margin-right: 1em;
+}
+
+h2 {
+  font-size: 1.3em;
+  
+  margin-right: 1em;
+}
+
+h3 {
+  margin: 0;
+  margin-bottom: 5px;
+  display: inline-block;
+  margin-left: 1em;
 }
  
 form {
@@ -48,15 +64,35 @@ form {
   margin-bottom: -10px;
   position: relative;
 }
- 
+.new-task {
+  background: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  margin-bottom: 15px;
+} 
+
 .new-task input {
   box-sizing: border-box;
   padding: 10px 0;
   background: transparent;
   border: none;
   width: 100%;
-  padding-right: 80px;
+  padding-left: 15px;
   font-size: 1em;
+  color: rgba(255, 255, 255, 0.1);
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(255, 255, 255, 0.4);
+  /* color: rgba(0, 0, 0, 0.5); */
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: red;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: red;
 }
  
 .new-task input:focus{
@@ -66,7 +102,7 @@ form {
 ul {
   margin: 0;
   padding: 0;
-  background: white;
+  font-family: 'montserrat';
 }
  
 .delete {
@@ -82,7 +118,8 @@ li {
   position: relative;
   list-style: none;
   padding: 15px;
-  border-bottom: #eee solid 1px;
+  border-bottom:rgba(255, 255, 255, 0.1) solid 1px;
+  background: rgba(255, 255, 255, 0.1);
 }
  
 li .text {
@@ -102,8 +139,9 @@ li.private {
   border-color: #ddd;
 }
  
-header .hide-completed {
+.hide-completed {
   float: right;
+  margin-top: 15px;
 }
  
 .toggle-private {

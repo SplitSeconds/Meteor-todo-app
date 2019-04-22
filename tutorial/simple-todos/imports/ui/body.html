@@ -1,5 +1,6 @@
 <body>
-  <div class="img-container"></div>
+  <div class="img-container">
+  </div>
   <div class="container">
     <header>
       <div class="login-button">
@@ -9,30 +10,40 @@
       <h1>Todo List</h1><br>
 
       <h2>You have {{incompleteCount}} {{checkPlural}} to do!</h2>
-      
-
- 
-      
     </header>
 
     <div>
-        {{#if currentUser}}
-        <h3>Hello {{currentUser.username}}! What do you want to to achieve today?</h3>
-          <form class="new-task">
-            <input type="text" name="text" placeholder="Type to add new tasks" />
-          </form>
-        {{/if}}
-    </div>
- 
-    <ul>
-      {{#each tasks}}
-        {{> task}}
-      {{/each}}
-    </ul>
+      {{#if currentUser}}
+        <div class="task-container">
 
-    <label class="hide-completed">
-        <input type="checkbox" />
-        Hide Completed Tasks
-      </label>
+          <h3>Hello <strong>{{currentUser.username}}</strong>! What do you want to to achieve today?</h3>
+            <form class="new-task">
+              <input type="text" name="text" placeholder="Type to add new tasks" />
+            </form>
+        </div>
+      {{/if}}
+ 
+      <ul>
+        {{#each tasks}}
+          {{> task}}
+        {{/each}}
+      </ul>
+
+      <div class="hide-container">
+        <label class="hide-completed">
+          <input type="checkbox" />
+          Hide Completed Tasks
+        </label>
+      </div>
+
+      <div class="mail-container">
+        <h4>Share this list:</h4>
+        <form action="" method="post" class="mail">
+          E-mail:<br>
+          <input type="text" name="mail" placeholder="Alice@todoapp.com"><br>
+          <input type="submit" value="Send">
+        </form>
+      </div>  
+    </div>
   </div>
 </body>

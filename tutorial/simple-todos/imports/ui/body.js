@@ -35,6 +35,27 @@ Template.body.helpers({
 });
 
 Template.body.events({
+  'submit .mail'(event) {
+    event.preventDefault();
+
+    const target = event.target;
+    const mail = target.mail.value;
+    console.log("mail", event.target.mail.value)
+    
+    //Send mail
+    //to, from, subject, text
+    Meteor.call(
+      mail,
+      'Todo List <hello@todo.com>',
+      'Hello from Todo App!',
+      'Somebody wants to share <a href="https://url.com">this todo list</a> with you!'
+    );
+
+    // Clear form
+    target.mail.value = '';
+  },
+  
+
   'submit .new-task'(event) {
     // Prevent default browser form submit
     event.preventDefault();
@@ -44,6 +65,7 @@ Template.body.events({
     console.log("event target", event.target)
     console.log("text", event.target.text)
     console.log("value", event.target.text.value)
+    
     const target = event.target;
     const text = target.text.value;
  
@@ -59,3 +81,4 @@ Template.body.events({
     instance.state.set('hideCompleted', event.target.checked);
   },
 });
+

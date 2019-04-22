@@ -41,7 +41,7 @@ Template.body.events({
 
     const target = event.target;
     const mail = target.mail.value;
-    const from = 'hello@todoapp.com'
+    const from = 'charlottetreuse42@gmail.com'
     console.log("mail", event.target.mail.value)
     
     //Send mail

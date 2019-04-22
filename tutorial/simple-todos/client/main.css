@@ -157,20 +157,34 @@ li.private {
 }
  
 .hide-container{
-  position: relative;
+  font-family: 'montserrat';
+  position: absolute;
   float: right;
-  margin-right: 20px;
+  margin-left: 15px;
 }
 
 .mail-container {
-  position: relative;
-  margin-left: 15px;
   font-family: 'montserrat';
+  position: relative;
+  margin-left: 445px;
+}
+
+.send-btn {
+  float: right; 
+  margin-right: 25px;
+  margin-top: 5px;
+  background: rgba(255, 255, 255, 0.2); 
+}
+
+.btn {
+  background: rgba(255, 255, 255, 0.2); 
 }
 
 .mail-container h4 {
   font-weight: normal;
   margin: 0;
+  text-align: right;
+  margin-right: 25px;
 }
  
 .toggle-private {

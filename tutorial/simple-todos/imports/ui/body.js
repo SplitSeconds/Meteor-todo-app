@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
+import { Email } from 'meteor/email'
 
 import { Tasks } from '../api/tasks.js';
  
@@ -40,22 +41,24 @@ Template.body.events({
 
     const target = event.target;
     const mail = target.mail.value;
+    const from = 'hello@todoapp.com'
     console.log("mail", event.target.mail.value)
     
     //Send mail
     //to, from, subject, text
     Meteor.call(
+      'sendEmail',
       mail,
-      'Todo List <hello@todo.com>',
-      'Hello from Todo App!',
-      'Somebody wants to share <a href="https://url.com">this todo list</a> with you!'
+      from,
+      'Hello from Meteor!',
+      'Somebody wants to share <a href="https://url.com">this todo list</a> with you!',
+      console.log("send")
     );
 
     // Clear form
     target.mail.value = '';
   },
   
-
   'submit .new-task'(event) {
     // Prevent default browser form submit
     event.preventDefault();

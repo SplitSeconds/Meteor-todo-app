@@ -42,7 +42,12 @@ Template.body.events({
     const target = event.target;
     const mail = target.mail.value;
     const from = 'charlottetreuse42@gmail.com'
-    console.log("mail", event.target.mail.value)
+    // console.log("mail", event.target.mail.value)
+
+    if (mail == '') {
+      alert('please enter a valid email adress');
+      throw new Meteor.Error('empty mail');
+    }
     
     //Send mail
     //to, from, subject, text

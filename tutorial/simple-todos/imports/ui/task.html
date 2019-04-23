@@ -1,15 +1,23 @@
 <template name="task">
   <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
-
-    <div id="icon" class="toggle-favorite">
-      {{#if favorite}}
-      <span class="star"></span>
-      {{else}}
-      <span class="empty-star"></span>
-      {{/if}}      
-    </div>
-
     <button class="delete">&times;</button>
+
+    <!-- <div id="icon" class="toggle-favorite">
+      {{#if favorite}}
+        <span class="star"><img src="../../public/starfilled.png" class="star-icon"></span>
+      {{else}}
+        <span class="empty-star"><img src="../../public/star.png" class="star-icon"></span>
+      {{/if}}      
+      
+    </div> -->
+
+    <button class="toggle-favorite star-btn">
+        {{#if favorite}}
+          <img src="https://res.cloudinary.com/dpjdxqrce/image/upload/v1556042444/starfilled.png" alt="filled star" class="star-icon">
+        {{else}}
+        <img src="https://res.cloudinary.com/dpjdxqrce/image/upload/v1556042444/star.png" alt="empty star" class="star-icon">
+        {{/if}}
+      </button>
     
     <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
  

@@ -11,6 +11,7 @@ if (Meteor.isServer) {
     return Tasks.find({
       $or: [
         { private: { $ne: true } },
+        { favorite: { $ne: true } },
         { owner: this.userId },
       ],
     });
@@ -24,6 +25,11 @@ Meteor.methods({
     // Make sure the user is logged in before inserting a task
     if (! Meteor.userId()) {
       throw new Meteor.Error('not-authorized');
+    }
+
+    if (text == '') {
+      alert('please enter a text');
+      throw new Meteor.Error('empty string');
     }
  
     Tasks.insert({
@@ -69,17 +75,17 @@ Meteor.methods({
  
     Tasks.update(taskId, { $set: { private: setToPrivate } });
   },
-  'tasks.favorite'(taskId, makeFavorite) {
+  'tasks.makeFavorite'(taskId, makeFavorite) {
     check(taskId, String);
     check(makeFavorite, Boolean);
  
     const task = Tasks.findOne(taskId);
  
-    // Make sure only the task owner can make a task private
+    // Make sure only the task owner can make a task favorite
     if (task.owner !== Meteor.userId()) {
       throw new Meteor.Error('not-authorized');
     }
  
-    Tasks.update(taskId, { $set: { favorite: setFavorite } });
+    Tasks.update(taskId, { $set: { favorite: makeFavorite } });
   },
 });

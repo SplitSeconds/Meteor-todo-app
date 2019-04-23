@@ -180,11 +180,24 @@ li.private {
   width: 50px;
 }
 
+.toggle-favorite {
+  padding: 0px;
+}
+
+.star-icon {
+  width: 16px;
+  height: 16px;
+  }
+
+.star-btn {
+  background: rgba(255, 255, 255, 0); 
+  border: none;
+}
 .btn {
   width: 50px;
   height: 30px;
   background: rgba(255, 255, 255, 0.2); 
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.6);
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
   padding: 0px;
   text-align: center;
   font-size: 1em;

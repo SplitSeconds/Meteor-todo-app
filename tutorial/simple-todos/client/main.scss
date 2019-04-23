@@ -139,7 +139,7 @@ ul {
 li {
   position: relative;
   list-style: none;
-  padding: 15px;
+  padding: 10px;
   border-bottom:rgba(255, 255, 255, 0.1) solid 1px;
   background: rgba(255, 255, 255, 0.1);
 }
@@ -192,6 +192,7 @@ li.private {
 .star-btn {
   background: rgba(255, 255, 255, 0); 
   border: none;
+  float: right;
 }
 .btn {
   width: 50px;
@@ -217,7 +218,7 @@ li.private {
  
 @media (max-width: 600px) {
   li {
-    padding: 12px 15px;
+    padding: 12px 10px;
   }
  
   .search {

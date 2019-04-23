@@ -20,4 +20,7 @@ Template.task.events({
   'click .toggle-private'() {
     Meteor.call('tasks.setPrivate', this._id, !this.private);
   },
+  'click .toggle-star'() {
+    Meteor.call('tasks.favorite', this._id, !this.favorite);
+  },
 });

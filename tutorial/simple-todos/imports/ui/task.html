@@ -1,7 +1,16 @@
 <template name="task">
   <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
+
+    <div id="icon" class="toggle-favorite">
+      {{#if favorite}}
+      <span class="star"></span>
+      {{else}}
+      <span class="empty-star"></span>
+      {{/if}}      
+    </div>
+
     <button class="delete">&times;</button>
- 
+    
     <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
  
     {{#if isOwner}}

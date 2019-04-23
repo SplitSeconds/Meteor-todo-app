@@ -51,7 +51,7 @@ Template.body.events({
       mail,
       from,
       'Hello from Meteor!',
-      'Somebody wants to share <a href="https://url.com">this todo list</a> with you!',
+      'Somebody wants to share this todo list with you: https://url.com',
       console.log("send")
     );
 

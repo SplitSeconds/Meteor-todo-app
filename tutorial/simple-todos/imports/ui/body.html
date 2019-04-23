@@ -9,14 +9,14 @@
 
       <h1>Todo List</h1><br>
 
-      <h2>You have {{incompleteCount}} {{checkPlural}} to do!</h2>
+      
     </header>
 
     <div>
       {{#if currentUser}}
         <div class="task-container">
-
-          <h3>Hello <strong>{{currentUser.username}}</strong>! What do you want to to achieve today?</h3>
+          <h2>Hello <strong>{{currentUser.username}}</strong>! You have {{incompleteCount}} {{checkPlural}} to do!</h2>
+          <h3> What do you want to to achieve today?</h3>
             <form class="new-task">
               <input type="text" name="text" placeholder="Type to add new tasks" />
             </form>
@@ -39,8 +39,8 @@
       <div class="mail-container">
         <h4>Share this list:</h4>
         <form method="post" class="mail">
-          <input type="text" name="mail" placeholder="Alice@todoapp.com"><br>
-          <input type="submit" value="send" class="send-btn">
+          <input type="text" name="mail" placeholder="Alice@todoapp.com" class="input-field"><br>
+          <input type="submit" value="send" class="send-btn btn">
         </form>
       </div>  
 

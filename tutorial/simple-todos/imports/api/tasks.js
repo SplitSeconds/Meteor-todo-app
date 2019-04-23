@@ -69,4 +69,17 @@ Meteor.methods({
  
     Tasks.update(taskId, { $set: { private: setToPrivate } });
   },
+  'tasks.favorite'(taskId, makeFavorite) {
+    check(taskId, String);
+    check(makeFavorite, Boolean);
+ 
+    const task = Tasks.findOne(taskId);
+ 
+    // Make sure only the task owner can make a task private
+    if (task.owner !== Meteor.userId()) {
+      throw new Meteor.Error('not-authorized');
+    }
+ 
+    Tasks.update(taskId, { $set: { favorite: setFavorite } });
+  },
 });

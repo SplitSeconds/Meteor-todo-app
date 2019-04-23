@@ -16,8 +16,9 @@ body {
 
 .img-container {
   /* background-image: url("https://res.cloudinary.com/dpjdxqrce/image/upload/v1555846398/alessandro-bellone-1322388-unsplash.jpg"); */
-  background-image: url("https://res.cloudinary.com/dpjdxqrce/image/upload/v1555922630/photo-1507666430997-cb17cda2f365.jpg");
+  background-image: url("https://res.cloudinary.com/dpjdxqrce/image/upload/v1556043520/Berlin_background.png");
   background-size: cover;
+  background-position: center; 
   opacity: 0.8;
   filter:alpha(opacity=80);
   background-attachment: fixed;
@@ -28,14 +29,13 @@ body {
   right: 0;
   padding: 0;
   margin: 0;
-  font-size: 14px;
 }
  
 .container {
   max-width: 600px;
   margin: 0 auto;
   min-height: 100%;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.9) !important;
 }
  
 header {
